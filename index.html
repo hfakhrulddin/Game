@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html ng-app="App">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body ng-controller="Ctrl">
+
+  <table>
+    <tr ng-repeat="row in game.grid">
+      <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
+        <div class="container">
+          <div class="card" ng-class="{flipped: tile.flipped}">
+              <img class="front" ng-src="img/back.png">
+              <img class="back" ng-src="img/{{tile.title}}.png">
+          </div>
+        </div>
+
+      </td>
+    </tr>
+  </table>
+
+    <script src="angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/game.functions.js"></script>
+    <script src="js/game.logic.js"></script>
+</body>
+
+</html>
